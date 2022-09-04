@@ -1,0 +1,51 @@
+env:
+  browser: true
+  es2021: true
+extends:
+  - google
+parser: '@typescript-eslint/parser'
+parserOptions:
+  ecmaVersion: latest
+  sourceType: module
+plugins:
+  - eslint-plugin-import
+rules:
+  {
+    quotes: [ 'error', 'double' ],
+    max-len: [ 'off', { 'code': 80 } ],
+    new-cap: "off",
+    valid-jsdoc: 'off',
+    require-jsdoc: 'off',
+    no-console: [ "error", { "allow": [ 'warn', 'error', 'info', 'table' ] } ],
+    no-invalid-this: 'off',
+    object-curly-spacing: [ 'error', 'always' ],
+    prefer-promise-reject-errors: warn,
+    indent: [ "error", 2, { SwitchCase: 1 } ],
+    semi: [ 2, "always" ],
+    comma-dangle: ["error", "always-multiline"],
+    camelcase: warn,
+    eol-last: ["error", "always"],
+    "array-bracket-newline": [
+      "error",
+      {
+        "multiline": false
+      }
+    ],
+    "no-trailing-spaces": ["error"],
+    "object-curly-newline": [
+      "error",
+      {
+        # ObjectExpression is for variable assignment to an object
+        "ObjectExpression": { "multiline": true, "minProperties": 1 },
+        # ObjectPattern is for assignment destructuring from an object
+        "ObjectPattern": { "multiline": true, "minProperties": 3 },
+        "ImportDeclaration": "never",
+        "ExportDeclaration": "always"
+      }
+    ],
+    "object-property-newline": ["error"],
+    "import/newline-after-import": ["error", { "count": 1 }],
+    "space-infix-ops": [2],
+    "arrow-spacing": "error"
+  }
+ignorePatterns: ['ui/dist/*']
