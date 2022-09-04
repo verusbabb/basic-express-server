@@ -1,5 +1,4 @@
 import express from "express";
-// import api from "./api";
 import morgan from "morgan";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
